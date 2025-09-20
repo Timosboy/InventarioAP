@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+*.pyo
+*.pyd
+*.pdb
+.python-version
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Django / DB / Archivos generados
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# Config/env (mantén un .env.example)
+.env
+.env.*
+!.env.example
+
+# Tests / herramientas
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# IDE/OS
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Docker / logs
+*.log
+
+# Builds
+dist/
+build/
