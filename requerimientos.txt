@@ -1,0 +1,9 @@
+Django
+djangorestframework
+djangorestframework-simplejwt
+drf-spectacular
+django-filter
+python-dotenv
+pymysql
+pytest
+pytest-django

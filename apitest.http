@@ -1,0 +1,38 @@
+### Login admin
+POST http://127.0.0.1:8000/api/auth/token/
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "tereocta12"
+}
+
+> {% client.global.set("admin_access", response.body.access); %}
+
+### Login usuario normal
+POST http://127.0.0.1:8000/api/auth/token/
+Content-Type: application/json
+
+{
+  "username": "USUARIO_NORMAL",
+  "password": "SU_PASS"
+}
+
+> {% client.global.set("user_access", response.body.access); %}
+
+### Listar productos como ADMIN (debe funcionar)
+GET http://127.0.0.1:8000/api/products/
+Authorization: Bearer {{admin_access}}
+
+### Crear producto como USUARIO NORMAL (debe dar 403)
+POST http://127.0.0.1:8000/api/products/
+Authorization: Bearer {{user_access}}
+Content-Type: application/json
+
+{
+  "sku": "SKU-XYZ",
+  "name": "Prueba",
+  "category": 1,
+  "price": "9.99",
+  "stock": 1
+}
